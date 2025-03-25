@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Notes Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Engineering Notes Hub</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to Engineering Notes Hub</h1>
+            <p>Access and share engineering notes with your peers</p>
+        </section>
+
+        <div class="current-selection">
+            <div class="steps-indicator">
+                <div class="step active">1. Branch</div>
+                <div class="step">2. Year</div>
+                <div class="step">3. Semester</div>
+                <div class="step">4. Subject</div>
+            </div>
+            <div class="selection-display"></div>
+        </div>
+
+        <section class="branch-selection active-section">
+            <h2><span class="step-number">1</span> Select Your Branch</h2>
+            <div class="branch-grid">
+                <button class="branch-btn" data-branch="CSE">Computer Science</button>
+                <button class="branch-btn" data-branch="ME">Mechanical</button>
+                <button class="branch-btn" data-branch="EE">Electrical</button>
+                <button class="branch-btn" data-branch="CE">Civil</button>
+                <button class="branch-btn" data-branch="ECE">Electronics</button>
+            </div>
+        </section>
+
+        <section id="yearSection" class="year-selection hidden inactive-section">
+            <h2><span class="step-number">2</span> Select Year</h2>
+            <div class="year-grid">
+                <button class="year-btn" data-year="1">1st Year</button>
+                <button class="year-btn" data-year="2">2nd Year</button>
+                <button class="year-btn" data-year="3">3rd Year</button>
+                <button class="year-btn" data-year="4">4th Year</button>
+            </div>
+        </section>
+
+        <section id="semesterSection" class="semester-selection hidden inactive-section">
+            <h2><span class="step-number">3</span> Select Semester</h2>
+            <div class="semester-grid">
+                <!-- Semesters will be dynamically populated -->
+            </div>
+        </section>
+
+        <section id="subjectSection" class="subject-selection hidden inactive-section">
+            <h2><span class="step-number">4</span> Select Subject</h2>
+            <div class="subject-grid" id="subjectGrid">
+                <!-- Subjects will be dynamically populated -->
+            </div>
+        </section>
+
+        <section id="notesSection" class="notes-section hidden">
+            <h2>Available Notes</h2>
+            <button id="uploadBtn" class="upload-btn">Upload New Notes</button>
+            <div class="notes-grid" id="notesGrid">
+                <!-- Notes will be dynamically populated -->
+            </div>
+        </section>
+    </main>
+
+    <div id="uploadModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Upload Notes</h2>
+            <form id="uploadForm">
+                <input type="text" placeholder="Your Name" name="authorName" required>
+                <input type="text" placeholder="Book Title" name="title" required>
+                <input type="file" name="pdf" accept=".pdf" required>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Engineering Notes Hub. All rights reserved.</p>
+    </footer>
+
+    <script src="subjects.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
